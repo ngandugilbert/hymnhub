@@ -18,9 +18,12 @@ html {
 }
 
 body {
-    background-color: #f3f3f4;
+    background-color: #fff;
     font-family: 'Quicksand', sans-serif;
-
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 #logo{
@@ -38,9 +41,11 @@ body {
     border-radius: 50%;
 }
 
-.footer {
+.footer-container {
     background: #f3f3f4;
+    background: #f5f5f5;
     border: none;
+    height: 80px;
 }
 
 .title{
@@ -64,8 +69,7 @@ body {
     width: 100%;
 }
 .my-container{
-    background: white;
-    margin-top: 80px;
+    background: red;
     height: 100%;
 }
 
@@ -74,6 +78,8 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background: #fff;
+    height: 100vh;
 }
 
 .login-section{

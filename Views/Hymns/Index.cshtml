@@ -1,49 +1,50 @@
 ﻿@model IEnumerable<HymnHub.Models.Hymn>
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> signInManager;
+@inject UserManager<IdentityUser> userManager;
+
 
 @{
     ViewData["Title"] = "Index";
 }
-
-<div class="container-fluid my-container">
-    <div class="hymn-list">
-        <form class="d-flex search-container" role="search">
-            <input class="form-control search-field" type="search" placeholder="Search for hymn" aria-label="Search" />
-            <button class="btn search-btn" type="submit"><i class="bi bi-search"></i></button>
-        </form>
-    </div>
+<div id="search-bar">
+    <form class="d-flex search-container" role="search" asp-action="Index">
+        <input class="form-control search-field" type="search" placeholder="Search for hymn" aria-label="Search"  name="searchString"/>
+        <button class="btn search-btn" type="submit"><i class="bi bi-search"></i></button>
+    </form>
 </div>
+<div id="hymn--display-container">
+    <div class="container">
+        <div id="hymn-intro">
+            <h1>All Hymns</h1>
+            <p style="color: dimgrey;">These are all the hymns on the site!</p>
+        </div>
+        <div id="hymn--list">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card hymn-card">
+                            <div class="card-body">
+                                <div class="hymn-title">
+                                    <h5 class="card-title"> @Html.DisplayFor(modelItem => item.Title)</h5>
+                                    
+                                </div>
+                                <p class="card-text max-length-paragraph">@Html.DisplayFor(modelItem => item.Lyrics)</p>
 
-<div class="container hymn-display">
-
-
-    <div class="title">
-        <h1>All Hymns</h1>
-        <p style="color: dimgrey;">These are all the hymns on the site!</p>
-    </div>
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="col-sm-6 col-lg-3">
-                <div class="card hymn-card">
-                    <div class="card-body">
-                        <div class="hymn-title">
-                            <h5 class="card-title"> @Html.DisplayFor(modelItem => item.Title)</h5>
-                            <h5 class="card-title">#@Html.DisplayFor(modelItem => item.Id)</h5>
-                        </div>
-                        <p class="card-text">@Html.DisplayFor(modelItem => item.Lyrics)</p>
-                        <div class="action-buttons">
-                            <div>
-                                <a class="btn" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-music-note-list icon-btn"></i></a>
-                                @if (User.Identity.IsAuthenticated)
-                                {
-                                    <a href="#" class="btn"><i class="bi bi-heart icon-btn"></i></a>
-                                }
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a class="btn" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-music-note-list" style="font-size: 2.5em;"></i></a>
+                                    <h3 class="card-title">#@Html.DisplayFor(modelItem => item.Id)</h3>
+                                </div>
+                                
+                                
                             </div>
                         </div>
                     </div>
-                </div>
+                }
             </div>
-        }
+        </div>
     </div>
-
 </div>
+   

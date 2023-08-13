@@ -1,0 +1,82 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    background-color: #f3f3f4;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+#logo{
+    height: 50px;
+}
+
+.header{
+    padding: 0 90px 0 70px;
+}
+
+.avatar{
+    height: 35px;
+    width: 35px;
+    background: red;
+    border-radius: 50%;
+}
+
+.footer {
+    background: #f3f3f4;
+    border: none;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.card{
+    margin-top: 20px;
+}
+.container-fluid-display{
+    background: white;
+    padding: 80px 0 50px 0;
+    
+}
+
+#container{
+    background: white;
+    width: 100%;
+}
+.my-container{
+    background: white;
+    margin-top: 80px;
+    height: 100%;
+}
+
+.login-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login-section{
+    background: transparent;
+    width: 40%;
+}

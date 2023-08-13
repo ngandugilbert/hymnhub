@@ -1,0 +1,149 @@
+﻿
+.nav-link {
+    color: black;
+}
+
+    .nav-link:hover {
+        color: black;
+    }
+
+.nav-container {
+    background-color: #fff;
+    color: black;
+}
+
+
+.search-field {
+    background-color: white;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    padding-left: 30px;
+    font-size: 16px;
+}
+/* Custom CSS to remove blue outline on focused search input */
+.form-control:focus {
+    box-shadow: none;
+    border-color: #ced4da; /* You can set the border color to your desired value */
+}
+
+
+.search-container {
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 23px;
+    box-shadow: 0px 35px 45px 0px rgba(155, 155, 155, 0.2), inset 0px -8px 16px 0px rgba(155, 155, 155, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
+    height: 70px;
+    width: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    margin-top: -30px;
+    z-index: 3;
+}
+
+.search-btn {
+    /* background-color:  #f3f8fb; */
+    background-color: white;
+    border-radius: 0 10px 10px 0;
+    width: 60px;
+    color: black;
+    font-size: 25px;
+    border-left: 1px solid whitesmoke;
+}
+
+.btn:focus {
+    box-shadow: none;
+    border-color: #ced4da;
+}
+
+#user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+}
+
+#profile-btn {
+    background-color: white;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-btn {
+    font-size: 20px;
+}
+
+.hymn-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.verse-of-day {
+    background-color: red;
+    height: 200px;
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.hymn-card {
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.2 );
+    backdrop-filter: blur( 16.5px );
+    -webkit-backdrop-filter: blur( 16.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.card-display {
+    background: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 150px;
+    padding-top: 80px;
+    padding-bottom: 200px;
+    bottom: 50px;
+}
+
+.my-footer {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    right: 0;
+    left: 0;
+    background: whitesmoke;
+}
+
+.container-display {
+    padding-bottom: 90px;
+    padding-top: 50px;
+}
+
+.hymn-display{
+    padding: 50px 0;
+}
+
+.hymn-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1px;
+}

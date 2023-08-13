@@ -1,48 +1,52 @@
 ﻿@model HymnHub.Models.Hymn
 
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> signInManager;
+@inject UserManager<IdentityUser> userManager;
+
+
 @{
     ViewData["Title"] = "Details";
 }
+<div class="container" >
+    <div class="row" id="hymn-container">
+        <div class="col-lg-8" id="lyrics">
+            <h1 style="margin-bottom: 20px;">@Html.DisplayFor(model => model.Title) Lyrics</h1>
+            <>@Html.DisplayFor(model=>model.Lyrics)</>
+        </div>
+        
+        <div class="col-lg-4" id="hymn-details">
+            <div>
+                <h3>Details</h3>
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        Number
+                    </dt>
+                    <dd class="col-sm-10">
+                        #@Html.DisplayFor(model => model.Id)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Author)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Author)
+                    </dd>
+                </dl>
+                <div>
+                    @{
+                        if (User.IsInRole("Admin"))
+                        {
+                            <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+                        }
+                    }
+                    
+                    <a asp-action="Index">Back to List</a>
+                </div>
+            </div>
+        </div>
 
-<h1>Details</h1>
+    </div>
 
-<div>
-    <h4>Hymn</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Author)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Author)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Lyrics)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Lyrics)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MusicSheetUrl)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MusicSheetUrl)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.InstrumentalMusicUrl)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.InstrumentalMusicUrl)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
 </div>

@@ -29,22 +29,16 @@
                             <div class="card-body">
                                 <div class="hymn-title">
                                     <h5 class="card-title"> @Html.DisplayFor(modelItem => item.Title)</h5>
-                                    <h5 class="card-title">#@Html.DisplayFor(modelItem => item.Id)</h5>
+                                    
                                 </div>
-                                <p class="card-text">@Html.DisplayFor(modelItem => item.Lyrics)</p>
-                                <div class="action-buttons">
-                                    <div>
-                                        <a class="btn" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-music-note-list icon-btn"></i></a>
-                                        
-                                        @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
-                                        {
-                                            <div id="action-buttons">
-                                                <a href="#" class="btn"><i class="bi bi-pen-fill icon-btn"></i></a>
-                                            </div>
-                                            
-                                        }
-                                    </div>
+                                <p class="card-text max-length-paragraph">@Html.DisplayFor(modelItem => item.Lyrics)</p>
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a class="btn" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-music-note-list" style="font-size: 2.5em;"></i></a>
+                                    <h3 class="card-title">#@Html.DisplayFor(modelItem => item.Id)</h3>
                                 </div>
+                                
+                                
                             </div>
                         </div>
                     </div>

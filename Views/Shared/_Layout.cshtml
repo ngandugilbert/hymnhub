@@ -41,7 +41,7 @@
                     @{
                         if (User.IsInRole("Admin"))
                         {
-                            <a class="nav-link create-btn" asp-area="" asp-controller="Hymns" asp-action="Create">Create</a>
+                            <a class="nav-link create-btn btn btn-outline-success" asp-area="" asp-controller="Hymns" asp-action="Create"><i class="bi bi-plus-lg icon-btn"></i>Create</a>
                         }
                     }
                     
@@ -55,8 +55,8 @@
         </main>
     </div>
 
-    <footer class="footer-container">
-        <div class="container">
+    <footer class="footer-container ">
+        <div class="container d-flex justify-content align-items-center pt-2">
             &copy; 2023 - Hymn Hub - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>

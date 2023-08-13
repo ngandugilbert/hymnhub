@@ -21,14 +21,6 @@ namespace HymnHub.Controllers
             _context = context;
         }
 
-        // GET: Hymns
-      /*  public async Task<IActionResult> Index()
-        {
-              return _context.Hymn != null ? 
-                          View(await _context.Hymn.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Hymn'  is null.");
-        }*/
-
         // search
         public async Task<IActionResult> Index(string searchString)
         {

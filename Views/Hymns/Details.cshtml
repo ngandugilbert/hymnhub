@@ -13,14 +13,17 @@
     <div class="row" id="hymn-container">
         <div class="col-lg-8" id="lyrics">
             <h1 style="margin-bottom: 20px;">@Html.DisplayFor(model => model.Title) Lyrics</h1>
-            <>@Html.DisplayFor(model=>model.Lyrics)</>
+            <div class="lyrics" contenteditable="false">
+                @Html.DisplayFor(model=>model.Lyrics)
+            </div>
+           
         </div>
         
         <div class="col-lg-4" id="hymn-details">
             <div>
-                <h3>Details</h3>
+                <h3 class="pt-3 pb-3" style="text-align:center;">Details</h3>
                 <dl class="row">
-                    <dt class="col-sm-2">
+                    <dt class="col-sm-2 ml-2">
                         Number
                     </dt>
                     <dd class="col-sm-10">
@@ -37,11 +40,19 @@
                     @{
                         if (User.IsInRole("Admin"))
                         {
-                            <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+                            
+                            
+                                <div id="action-buttons">
+                                <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-outline-primary " style="color: blue; font-size: 18px;"><i class="bi bi-pen-fill"></i></a>
+                                <a asp-action="Delete" asp-route-id="@Model?.Id" class="btn btn-outline-danger " style="color: red ;font-size: 18px;"><i class="bi bi-trash-fill icon-btn"></i></a>
+
+                                </div>
+
+                            
                         }
                     }
                     
-                    <a asp-action="Index">Back to List</a>
+                   
                 </div>
             </div>
         </div>

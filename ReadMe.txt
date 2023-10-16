@@ -9,9 +9,8 @@ Please note that these are temporary default credentials. It's highly recommende
 
 We're here to provide you with a collection of beautiful hymns and spiritual songs to inspire and uplift your soul. Feel free to explore our hymn library and let the melodies fill your heart with joy and reflection.
 
-If you have any questions or need assistance, don't hesitate to contact us at [contact email address]. We're here to make your experience with [Your Hymn Web Application Name] enjoyable and meaningful.
-
 Thank you for joining us on this musical journey!
 
 Best regards,
-The HymnHub Team
+The HymnHub Team,
+Evelyn Siame, Gilbert Ng'andu, Richard Simbula, Jonathan Lungu
